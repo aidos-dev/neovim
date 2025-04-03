@@ -1,7 +1,7 @@
 return {
-	"ellisonleao/gruvbox.nvim",
+	"f4z3r/gruvbox-material.nvim",
 	config = function()
-		require("gruvbox").setup({
+		require("gruvbox-material").setup({
 			terminal_colors = true,
 			transparent_mode = true,
 			overrides = {
@@ -9,6 +9,6 @@ return {
 				--["@comment.lua"] = { bg = "#000000" },
 			},
 		})
-		--vim.cmd.colorscheme("gruvbox")
+		vim.cmd.colorscheme("gruvbox-material")
 	end,
 }
