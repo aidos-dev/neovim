@@ -3,7 +3,10 @@ return {
 	config = function()
 		require("gruvbox-material").setup({
 			terminal_colors = true,
-			transparent_mode = true,
+		--	transparent_mode = true,
+			background = {
+				transparent = true,      -- set the background to transparent
+			},
 			overrides = {
 				--["@lsp.type.method"] = { fg = "#426b5d" },
 				--["@comment.lua"] = { bg = "#000000" },

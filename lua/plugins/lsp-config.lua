@@ -33,9 +33,14 @@ return {
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities
 			})
+
+			-- LSP keybindings
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gD', vim.lsp.buf.definition, {})
 			vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+
+			-- Diagnostic keybindings
+			vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Show diagnostic error" })
 		end
 	},
 }
