@@ -5,6 +5,15 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin")
 			require("telescope").setup({
+				defaults = {
+					preview = {
+						-- telescope's built-in previewer still targets the old
+						-- nvim-treesitter API (removed by the "main" branch
+						-- rewrite), which crashes ft_to_lang(); fall back to
+						-- regex highlighting instead.
+						treesitter = false,
+					},
+				},
 				pickers = {
 					find_files = {
 						find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },

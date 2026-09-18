@@ -18,4 +18,7 @@ vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
-
+-- terminal
+vim.opt.shell = '/bin/bash'
+vim.keymap.set('n', '<leader>th', ':below split | terminal<CR>', { desc = 'Open terminal in horizontal split' })
+vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Open terminal in vertical split' })
