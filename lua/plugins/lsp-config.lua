@@ -33,7 +33,7 @@ return {
 					"--fallback-style=llvm",
 					"--query-driver=/usr/bin/g++,/usr/bin/clang++",
 				},
-				filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+				filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 				root_markers = {
 					'.clangd',
 					'.clang-tidy',
@@ -48,8 +48,9 @@ return {
 			vim.lsp.enable({ "lua_ls", "gopls", "clangd", "zls", "ts_ls" })
 
 			-- LSP keybindings
-			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-			vim.keymap.set('n', 'gD', vim.lsp.buf.definition, {})
+			-- K (hover) is a built-in default
+			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+			vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
 			vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 
 			-- Diagnostic keybindings
